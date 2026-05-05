@@ -5,7 +5,7 @@
 1. Google帳號，申請Google AI Studio帳號的API金鑰
 2. Huggingface的帳號
 3. LINE的帳號
-4. **Claude Code 的訂閱(至少 Pro 以上，可多人共用)**
+4. **Claude Code/OpenAI 的訂閱(至少 Pro/Plus 以上，可多人共用)**
 5. 課程中遇到問題，在Slido上提問
 6. 下課後問題，在本課程的Github上Issue提問(需註冊Github帳號)
 7. 能執行Powershell的Windows電腦或者Terminal的Mac電腦
