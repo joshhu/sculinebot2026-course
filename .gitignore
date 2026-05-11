@@ -27,6 +27,10 @@ env/
 Thumbs.db
 desktop.ini
 
+# Microsoft Office lock files (Word/Excel/PowerPoint 開啟時建立的暫存鎖檔)
+~$*
+*.tmp
+
 # Logs
 *.log
 

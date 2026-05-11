@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(hf --version)",
+      "Bash(hf auth *)",
+      "PowerShell(hf *)",
+      "PowerShell(uvx *)",
+      "PowerShell(Test-Path *)",
+      "WebFetch(domain:ai.google.dev)",
+      "WebSearch"
+    ]
+  }
+}
