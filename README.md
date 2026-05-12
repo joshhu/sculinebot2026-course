@@ -1,5 +1,14 @@
 # 東吳大學資科系2026年上半年LINE Bot進階課程
 
+## 更新資訊
+
+- 獲得 LINE 的帳號方法已經更新在https://github.com/joshhu/sculinebot2026-course/issues/2
+- 下次上課前要安裝好下面的東西
+  - uv
+  - gh
+  - docker
+  - claude code CLI
+
 ## 課前準備
 
 1. Google帳號，申請Google AI Studio帳號的API金鑰
