@@ -36,7 +36,7 @@ handler = WebhookHandler(line_channel_secret)
 def query(payload: str) -> str:
     """Send a prompt to Gemini and return the response text."""
     response = client.models.generate_content(
-        model="gemini-2.5-flash-lite",
+        model="gemini-3.1-flash-lite",
         contents=[payload]
     )
     return response.text

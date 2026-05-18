@@ -25,9 +25,9 @@ from linebot.v3.webhooks import MessageEvent, TextMessageContent
 
 
 # Initialize Google Gemini
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-client = genai.Client(api_key=GOOGLE_API_KEY)
-chat = client.chats.create(model="gemini-2.0-flash")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+client = genai.Client(api_key=GEMINI_API_KEY)
+chat = client.chats.create(model="gemini-3-flash-preview")
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -36,10 +36,10 @@ logging.basicConfig(
 )
 app.logger.setLevel(logging.INFO)
 
-channel_secret = os.getenv("YOUR_CHANNEL_SECRET")
-channel_access_token = os.getenv("YOUR_CHANNEL_ACCESS_TOKEN")
-configuration = Configuration(access_token=channel_access_token)
-handler = WebhookHandler(channel_secret)
+line_channel_secret = os.getenv("LINE_CHANNEL_SECRET")
+line_channel_access_token = os.getenv("LINE_CHANNEL_ACCESS_TOKEN")
+configuration = Configuration(access_token=line_channel_access_token)
+handler = WebhookHandler(line_channel_secret)
 
 
 def query(payload: str) -> str:

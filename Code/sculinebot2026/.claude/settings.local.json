@@ -7,7 +7,14 @@
       "PowerShell(uvx *)",
       "PowerShell(Test-Path *)",
       "WebFetch(domain:ai.google.dev)",
-      "WebSearch"
+      "WebSearch",
+      "PowerShell(Invoke-RestMethod -Uri \"https://huggingface.co/api/spaces?author=joshhu&limit=100\" | Select-Object -ExpandProperty id)",
+      "PowerShell(Invoke-RestMethod -Uri \"https://huggingface.co/api/spaces?author=joshhu&limit=100\")",
+      "PowerShell($r = Invoke-RestMethod -Uri \"https://huggingface.co/api/spaces/joshhu/SCULINEBOT\"; $r.runtime | ConvertTo-Json -Depth 5)",
+      "Bash(hf upload *)",
+      "Bash(hf repos *)",
+      "PowerShell($r = Invoke-RestMethod -Uri \"https://huggingface.co/api/spaces/joshhu/SCULINEBOT\"; \"Stage: $\\($r.runtime.stage\\) | SHA: $\\($r.runtime.sha\\)\"; \"---Files---\"; Invoke-RestMethod -Uri \"https://huggingface.co/api/spaces/joshhu/SCULINEBOT/tree/main\" | Format-Table path, size, type -AutoSize)",
+      "Bash(/c/Users/joshhu/.hf-cli/venv/Scripts/python.exe *)"
     ]
   }
 }

@@ -46,11 +46,11 @@ logging.basicConfig(
 )
 app.logger.setLevel(logging.INFO)
 
-channel_secret = os.environ.get("YOUR_CHANNEL_SECRET")
-channel_access_token = os.environ.get("YOUR_CHANNEL_ACCESS_TOKEN")
+line_channel_secret = os.environ.get("LINE_CHANNEL_SECRET")
+line_channel_access_token = os.environ.get("LINE_CHANNEL_ACCESS_TOKEN")
 
-configuration = Configuration(access_token=channel_access_token)
-handler = WebhookHandler(channel_secret)
+configuration = Configuration(access_token=line_channel_access_token)
+handler = WebhookHandler(line_channel_secret)
 
 
 # === AI Query 包裝 ===

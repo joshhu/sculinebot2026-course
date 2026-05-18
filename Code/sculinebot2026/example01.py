@@ -35,15 +35,15 @@ from linebot.v3.webhooks import VideoMessageContent
 import requests
 
 # === 初始化 Google Gemini ===
-GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
-client = genai.Client(api_key=GOOGLE_API_KEY)
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
+client = genai.Client(api_key=GEMINI_API_KEY)
 
 google_search_tool = Tool(
     google_search=GoogleSearch()
 )
 
 chat = client.chats.create(
-    model="gemini-2.5-pro-preview-05-06",
+    model="gemini-3.1-pro-preview",
     config=GenerateContentConfig(
         system_instruction="你是一個中文的AI助手，關於所有問題，請用繁體中文文言文回答",
         tools=[google_search_tool],
@@ -64,11 +64,11 @@ logging.basicConfig(
 )
 app.logger.setLevel(logging.INFO)
 
-channel_secret = os.environ.get("YOUR_CHANNEL_SECRET")
-channel_access_token = os.environ.get("YOUR_CHANNEL_ACCESS_TOKEN")
+line_channel_secret = os.environ.get("LINE_CHANNEL_SECRET")
+line_channel_access_token = os.environ.get("LINE_CHANNEL_ACCESS_TOKEN")
 
-configuration = Configuration(access_token=channel_access_token)
-handler = WebhookHandler(channel_secret)
+configuration = Configuration(access_token=line_channel_access_token)
+handler = WebhookHandler(line_channel_secret)
 
 
 # === AI Query 包裝 ===
@@ -113,7 +113,7 @@ def handle_text_message(event):
         try:
             # 使用 Gemini 生成圖片
             response = client.models.generate_content(
-                model="gemini-2.0-flash-exp-image-generation",
+                model="gemini-3.1-flash-image-preview",
                 contents=prompt,
                 config=types.GenerateContentConfig(
                     response_modalities=["TEXT", "IMAGE"]
@@ -194,7 +194,7 @@ def handle_image_message(event):
     # === 以下是解釋圖片 === #
     image = Image.open(tf.name)
     response = client.models.generate_content(
-        model="gemini-2.0-flash",
+        model="gemini-3-flash-preview",
         config=types.GenerateContentConfig(
             system_instruction="你是一個資深的面相命理師，如果有人上手掌的照片，就幫他解釋手相，如果上傳正面臉部的照片，就幫他解釋面相，照片要先去背，如果是一般的照片，就正常說明照片不用算命，請用繁體中文回答",
             response_modalities=["TEXT"],
@@ -258,7 +258,7 @@ def handle_video_message(event):
         video_data = video_response.content
 
         response = client.models.generate_content(
-            model="gemini-2.5-flash-preview-05-20",
+            model="gemini-3-flash-preview",
             config=types.GenerateContentConfig(
                 system_instruction="你是一個專業的影片解說員，請用繁體中文簡要說明這段影片的內容。",
                 response_modalities=["TEXT"],
