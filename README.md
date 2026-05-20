@@ -9,6 +9,11 @@
   - docker
   - claude code CLI
 
+- HuggingFace Space 三個變數名稱
+  - LINE_CHANNEL_ACCESS_TOKEN
+  - LINE_CHANNEL_SECRET
+  - GEMINI_API_KEY
+
 ## 課前準備
 
 1. Google帳號，申請Google AI Studio帳號的API金鑰
