@@ -1,0 +1,25 @@
+# Secrets — 絕不上傳
+.env
+.env.*
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+.venv-*/
+venv/
+.uv/
+
+# macOS
+.DS_Store
+
+# Claude Code / 本機工作狀態
+.claude/
+.remember/
+
+# 產生的暫存圖片
+images/
+*.tmp
+.playwright-mcp/
