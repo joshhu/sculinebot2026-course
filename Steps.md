@@ -56,14 +56,14 @@
 1. 先在 HuggingFace 的網站上取得你的 Access Token
 2. 在 Powershell 中輸入 `hf auth login --force` 並按下 Enter 鍵
 3. 在提示中輸入你的 Hugging Face Access Token 並按下 Enter 鍵
-4. 確認登入成功，輸入 `hf auth whoami` 查看你的帳號資訊，出現名字就對了。
+4. 確認登入成功，輸入 `hf auth whoami` 查看你的帳號資訊，出現名字就對了。  
 ![alt text](image.png)
 
 ### 2. 登入 GitHub
 1. 在 Powershell 中輸入 `gh auth login` 並按下 Enter 鍵
 2. 選擇登入方式（建議使用瀏覽器登入）
 3. 按照提示完成登入流程
-4. 確認登入成功，輸入 `gh auth status` 查看你的帳號資訊，出現名字就對了。
+4. 確認登入成功，輸入 `gh auth status` 查看你的帳號資訊，出現名字就對了。  
 ![alt text](image-1.png)
 
 ## 六、準備專案資料夾
