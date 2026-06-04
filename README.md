@@ -2,6 +2,14 @@
 
 ## 更新資訊
 
+- 2026/06/04 更新：
+這次課程的實作部分步驟放在這邊：
+**Windows使用者**
+https://github.com/joshhu/sculinebot2026-course/blob/main/Steps.md
+
+**macOS使用者**
+https://github.com/joshhu/sculinebot2026-course/blob/main/Steps_mac.md
+
 - 獲得 LINE 的帳號方法已經更新在https://github.com/joshhu/sculinebot2026-course/issues/2
 - 下次上課前要安裝好下面的東西
   - uv
